@@ -1,0 +1,11 @@
+
+AppUser : 
+	- id (Long)
+	- username (String)
+	- password (String)
+	- appRoles (Collection<AppRole>, ManyToMany) // Unidirectionnel
+
+
+AppRole : 
+	- id (Long)
+	- roleName (String)
