@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @author anghack
  */
-public interface UserAccountService {
+public interface AccountService {
     AppUser addNewUser(AppUser user);
     AppRole addNewRole(AppRole role);
     void addRoleToUser(String username, String roleName);

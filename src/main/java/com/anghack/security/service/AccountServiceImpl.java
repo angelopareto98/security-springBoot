@@ -11,11 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class UserAccountServiceImpl implements UserAccountService {
+public class AccountServiceImpl implements AccountService {
     private final AppUserRepository appUserRepository;
     private final AppRoleRepository appRoleRepository;
 
-    public UserAccountServiceImpl(AppUserRepository appUserRepository, AppRoleRepository appRoleRepository) {
+    public AccountServiceImpl(AppUserRepository appUserRepository, AppRoleRepository appRoleRepository) {
         this.appUserRepository = appUserRepository;
         this.appRoleRepository = appRoleRepository;
     }
@@ -41,12 +41,12 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     @Override
     public AppUser loadUserByUsername(String username) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.appUserRepository.findByUsername(username);
     }
 
     @Override
     public List<AppUser> listUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.appUserRepository.findAll();
     }
 
 }
